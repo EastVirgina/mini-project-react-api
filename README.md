@@ -1,16 +1,25 @@
-# React + Vite
+🚀 React Data Flow: Mini Project API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proyek sederhana untuk mendalami alur data (**Data Flow**) pada React menggunakan Public API. Proyek ini dibangun untuk memahami integrasi antara *State Management*, *Side Effects*, dan *Asynchronous Fetching*.
 
-Currently, two official plugins are available:
+🛠️ Tech Stack
+- **Framework:** [React.js](https://reactjs.org/) (Vite)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Data Source:** [JSONPlaceholder](https://jsonplaceholder.typicode.com/)
+- **Icons:** Lucide React (Opsional)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+📖 Apa yang Saya Pelajari?
+Dalam pengembangan proyek ini, saya mempraktikkan konsep-konsep inti React:
+1. **useState:** Mengelola status *loading*, penyimpanan data *array*, dan penanganan *error*.
+2. **useEffect:** Menjalankan pengambilan data secara otomatis saat komponen pertama kali dimuat (*mounting*).
+3. **Async/Await & Fetch API:** Melakukan *request* HTTP ke server eksternal secara asinkron.
+4. **Conditional Rendering:** Menampilkan UI yang berbeda berdasarkan status data (Loading, Success, atau Error).
+5. **List Rendering:** Menggunakan fungsi `.map()` untuk menampilkan koleksi data secara dinamis dengan `key` prop yang unik.
 
-## React Compiler
+📸 Tampilan Proyek
+![Screenshot Aplikasi](https://via.placeholder.com/800x400?text=Tampilan+Aplikasi+Task+Monitor)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🚀 Cara Menjalankan di Lokal
+1. **Clone repository ini:**
+   ```bash
+   git clone [https://github.com/username-kamu/mini-project-react-api.git](https://github.com/username-kamu/mini-project-react-api.git)
