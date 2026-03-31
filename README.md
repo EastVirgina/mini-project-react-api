@@ -16,9 +16,6 @@ Dalam pengembangan proyek ini, saya mempraktikkan konsep-konsep inti React:
 4. **Conditional Rendering:** Menampilkan UI yang berbeda berdasarkan status data (Loading, Success, atau Error).
 5. **List Rendering:** Menggunakan fungsi `.map()` untuk menampilkan koleksi data secara dinamis dengan `key` prop yang unik.
 
-📸 Tampilan Proyek
-![Screenshot Aplikasi](https://via.placeholder.com/800x400?text=Tampilan+Aplikasi+Task+Monitor)
-
 🚀 Cara Menjalankan di Lokal
 1. **Clone repository ini:**
    ```bash
