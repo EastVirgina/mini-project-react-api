@@ -1,20 +1,16 @@
 import { useState, useEffect } from 'react'
 
 function App() {
-  const [post, setPost] = useState(null) // Untuk simpan data
-  const [loading, setLoading] = useState(true) // Untuk status loading
+  const [posts, setPosts] = useState([]); // Pastikan pakai []
+const [loading, setLoading] = useState(true);
+const [searchTerm, setSearchTerm] = useState("");
 
-  const getData = async () => {
+const getData = async () => {
   try {
     setLoading(true);
-    // Kita buat angka acak antara 1 sampai 100
-    const randomId = Math.floor(Math.random() * 100) + 1; 
-    
-    // Gunakan template literal (backtick `) untuk memasukkan ID ke URL
-    const response = await fetch(`https://jsonplaceholder.typicode.com/todos/${randomId}`);
+    const response = await fetch('https://jsonplaceholder.typicode.com/todos');
     const hasil = await response.json();
-    
-    setPost(hasil);
+    setPosts(hasil); 
     setLoading(false);
   } catch (error) {
     console.error("Gagal ambil data:", error);
@@ -22,37 +18,63 @@ function App() {
   }
 };
 
-  useEffect(() => {
-    getData()
-  }, [])
+useEffect(() => {
+    getData();
+  }, []);
 
-  if (loading) return <h1 className="p-10 text-center">Sabar, lagi loading...</h1>
+  // Baris "if (loading) return" SUDAH DIHAPUS
+
+  const filteredPosts = posts.filter((item) =>
+    item.title.toLowerCase().includes(searchTerm.toLowerCase())
+  );
 
   return (
-  <div className="min-h-screen bg-slate-900 text-white p-10 flex flex-col items-center">
-    <div className="bg-slate-800 p-8 rounded-2xl shadow-2xl border border-slate-700 text-center max-w-sm">
-      <h1 className="text-sm font-bold text-blue-400 uppercase tracking-widest mb-2">Task Monitor</h1>
-      
-      {/* Judul Post */}
-      <h2 className="text-2xl font-semibold mb-4 leading-tight italic">
-        "{post?.title}"
-      </h2>
+    <div className="min-h-screen bg-slate-900 text-white p-10">
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-3xl font-bold text-center text-blue-400 mb-8">Daftar Tugas Hari Ini</h1>
 
-      {/* Badge Status */}
-      <div className={`inline-block px-4 py-1 rounded-full text-sm mb-6 ${post?.completed ? 'bg-green-500/20 text-green-400' : 'bg-yellow-500/20 text-yellow-400'}`}>
-        {post?.completed ? '● Selesai' : '○ Sedang Berjalan'}
+        <div className="mb-6">
+          <input
+            type="text"
+            placeholder="Cari tugas..."
+            className="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+        </div>
+
+        {loading ? (
+          <p className="text-center animate-pulse">Memuat daftar tugas...</p>
+        ) : (
+          <div className="grid gap-4">
+            {/* Pakai filteredPosts di sini */}
+            {filteredPosts.slice(0, 10).map((item) => (
+              <div 
+                key={item.id} 
+                className="bg-slate-800 p-4 rounded-xl border border-slate-700 flex justify-between items-center hover:bg-slate-750 transition"
+              >
+                <span className="capitalize">{item.title}</span>
+                {item.completed ? (
+                  <span className="text-xs bg-green-500/20 text-green-400 px-2 py-1 rounded">Selesai</span>
+                ) : (
+                  <span className="text-xs bg-yellow-500/20 text-yellow-400 px-2 py-1 rounded">Proses</span>
+                )}
+              </div>
+            ))}
+          </div>
+        )}
+        
+        {/* Pesan jika tidak ada hasil cari */}
+        {!loading && filteredPosts.length === 0 && (
+          <p className="text-center text-slate-500 italic mt-4">Tugas tidak ditemukan...</p>
+        )}
+
+        <button onClick={getData} className="mt-8 block mx-auto bg-blue-600 hover:bg-blue-500 px-6 py-2 rounded-lg font-bold">
+          Refresh Daftar
+        </button>
       </div>
-
-      <button 
-        onClick={getData}
-        className="block w-full bg-blue-600 hover:bg-blue-500 py-3 rounded-xl font-bold transition-all transform active:scale-95"
-      >
-        Ambil Tugas Acak
-      </button>
     </div>
-  </div>
-  
-);
+  );
 }
 
 export default App
