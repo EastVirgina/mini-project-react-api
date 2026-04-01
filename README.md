@@ -16,7 +16,6 @@ Dalam pengembangan proyek ini, saya mempraktikkan konsep-konsep inti React:
 4. **Conditional Rendering:** Menampilkan UI yang berbeda berdasarkan status data (Loading, Success, atau Error).
 5. **List Rendering:** Menggunakan fungsi `.map()` untuk menampilkan koleksi data secara dinamis dengan `key` prop yang unik.
 
-🚀 Cara Menjalankan di Lokal
-1. **Clone repository ini:**
-   ```bash
-git clone [https://github.com/EastVirgina/mini-project-react-api.git](https://github.com/EastVirgina/mini-project-react-api.git)
+Demo Langsung
+Anda dapat mencoba aplikasi ini secara langsung melalui tautan di bawah ini:
+> [KLIK DI SINI UNTUK LIVE DEMO](https://link-proyek-anda.vercel.app)
