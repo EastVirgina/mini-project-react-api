@@ -18,4 +18,4 @@ Dalam pengembangan proyek ini, saya mempraktikkan konsep-konsep inti React:
 
 Demo Langsung
 Anda dapat mencoba aplikasi ini secara langsung melalui tautan di bawah ini:
-> **[KLIK DI SINI UNTUK LIVE DEMO](https://mini-project-react-27hm5ufzn-eastvirginas-projects.vercel.app)
+[KLIK DI SINI UNTUK LIVE DEMO](https://mini-project-react-27hm5ufzn-eastvirginas-projects.vercel.app)
