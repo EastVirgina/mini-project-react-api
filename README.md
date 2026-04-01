@@ -19,4 +19,4 @@ Dalam pengembangan proyek ini, saya mempraktikkan konsep-konsep inti React:
 🚀 Cara Menjalankan di Lokal
 1. **Clone repository ini:**
    ```bash
-   git clone [https://github.com/EastVirgina/mini-project-react-api.git](https://github.com/EastVirgina/mini-project-react-api.git)
+git clone [https://github.com/EastVirgina/mini-project-react-api.git](https://github.com/EastVirgina/mini-project-react-api.git)
